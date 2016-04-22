@@ -1,3 +1,4 @@
-function pageC(arguments) {
-    console.log('pageC');
+function pageC(callback) {
+    
+
 }

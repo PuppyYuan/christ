@@ -1,0 +1,30 @@
+.container .page-c {
+    width  : 100%;
+    height : 100%;
+    background-image: url("../images/c/page-c-bg.png");
+    position: absolute;
+    z-index: 3;
+}
+
+
+.effect-in{
+    z-index: 15;
+    display: block;
+    opacity: 0;
+    animation: effectIn 5s ease-in-out forwards;
+    -webkit-animation: effectIn 5s ease-in-out forwards;
+    transform-origin: 58.5% 73.5%;
+    -webkit-transform-origin: 58.5% 73.5%;
+    transform: scale(8);
+    -webkit-transform: scale(8);
+}
+
+@keyframes effectIn{
+    0%{opacity: 0;}
+    100%{opacity: 1; transform: scale(1);}
+}
+
+@-webkit-keyframes effectIn{
+    0%{opacity: 0;}
+    100%{opacity: 1; -webkit-transform: scale(1);}
+}

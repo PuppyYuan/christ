@@ -7,27 +7,62 @@ function changePage(element, effect, callback){
         });
 }
 
+function HTML5Audio(url, loop){
+    var audio = new Audio(url);
+    audio.autoplay = true;
+    audio.loop = loop || false;
+    audio.play();
+    
+    return {
+        end: function(callback){
+            audio.addEventListener('ended', function(){
+                callback();
+            }, false);
+        }
+    }
+}
+
 var Chritmas = function() {
     var $pageA = $('.page-a');
     var $pageB = $('.page-b');
     var $pageC = $('.page-c');
     
-    $('#choose').on('change', function(e){
-       var pageName = e.target.value;
-       
-       switch (pageName) {
-            case "page-b":
-                //切换到页面B，然后捕获到切换后的通知
-                changePage($pageA, "effect-out", function() {
-                    new pageB()
-                })
-                break;
-            case "page-c":
-                //切换到页面C，然后捕获到切换后的通知
-                changePage($pageC, "effect-in", function() {
-                    new pageC()
-                })
-                break;
-        } 
+    var observer = new Observer();
+    
+    new pageA(function(){
+        observer.publish("completeA");
+    });
+    
+    observer.subscribe('pageB', function(){
+        new pageB(function(){
+            observer.publish("completeB");
+        });
+    });
+    
+    observer.subscribe("pageC", function() {
+        new pageC();
+    });
+    
+    observer.subscribe('completeA', function(){
+        changePage($pageA, 'effect-out', function(){
+            observer.publish('pageB');
+        });
+    });
+    
+    observer.subscribe('completeB', function(){
+        changePage($pageC, 'effect-in', function(){
+            observer.publish('pageC');
+        });
     });
 };
+
+$(function(){
+    $('button').on('click', function(){        
+        //Chritmas();
+        
+        var audio1 = HTML5Audio('music/scene.mp3');
+        audio1.end(function() {
+            alert("音乐结束")
+        })
+    });
+});
