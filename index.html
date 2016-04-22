@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--<link rel="stylesheet" href="css/style.css" type="text/css"></link>-->
+    <link rel="stylesheet" href="css/common.css" type="text/css"></link>
+</head>
+
+<body>
+    <section class="container">
+        <section class="page-a  bg-adaptive"></section>
+        <section class="page-b  bg-adaptive"></section>
+        <section class="page-c  bg-adaptive"></section>
+    </section>
+    <select id="choose">
+        <option value="page-a" selected="">1</option>
+        <option value="page-b" >2</option>
+        <option value="page-c" >3</option>
+    </select>
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/jquery.transit.min.js"></script>
+    <script src="js/christmas.js"></script>
+    <script src="js/pageA.js"></script>
+    <script src="js/pageB.js"></script>
+    <script src="js/pageC.js"></script>
+    <script>
+        var doc = document,
+            docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                //自适应设置容器高度
+                var container = document.querySelector(".container")
+                    //原始比例
+                var proportion = 844 / 1378;
+                container.style.height = container.clientWidth * proportion + "px";
+            };    
+            
+            window.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        
+        Chritmas();
+    </script>
+</body>
+
+</html>
