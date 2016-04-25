@@ -29,13 +29,13 @@ var Chritmas = function() {
     
     var observer = new Observer();
     
-    new pageA(function(){
+    new pageA($pageA, function(){
         observer.publish("completeA");
     });
     
     observer.subscribe('pageB', function(){
-        new pageB(function(){
-            observer.publish("completeB");
+        new pageB($pageB, function(){
+            //observer.publish("completeB");
         });
     });
     
@@ -58,11 +58,11 @@ var Chritmas = function() {
 
 $(function(){
     $('button').on('click', function(){        
-        //Chritmas();
-        
-        var audio1 = HTML5Audio('music/scene.mp3');
-        audio1.end(function() {
-            alert("音乐结束")
-        })
+        Chritmas();
+
+        // var audio1 = HTML5Audio('music/scene.mp3');
+        // audio1.end(function() {
+        //     alert("音乐结束")
+        // })
     });
 });

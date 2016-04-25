@@ -1,11 +1,10 @@
-.container .page-c {
+.page-c {
     width  : 100%;
     height : 100%;
     background-image: url("../images/c/page-c-bg.png");
     position: absolute;
     z-index: 3;
 }
-
 
 .effect-in{
     z-index: 15;

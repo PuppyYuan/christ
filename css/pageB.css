@@ -5,3 +5,233 @@
     position: absolute;
     z-index: 4;
 }
+
+.walk-run{
+    animation-play-state: running;
+    -webkit-animation-play-state: running;
+}
+
+.walk-stop{
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+
+.christmas-boy{
+    width: 3.5rem;
+    height: 4.06rem;
+    position: absolute;
+    z-index: 5;
+    right: -3.5rem;
+    top: 4rem;
+    background: url("../images/b/boy.png");
+    background-size: 1500% 100%;
+    background-position: 0 100%;
+}
+
+.boy-walk{
+    animation: boyWalk 0.75s steps(4, end) infinite;
+    -webkit-animation: boyWalk 0.75s steps(4, end) infinite;
+}
+
+@keyframes boyWalk{
+    0% { background-position: 0 100%;}
+    100% { background-position: -400% 100%;}
+}
+
+@-webkit-keyframes boyWalk{
+    0% { background-position: 0 100%;}
+    100% { background-position: -400% 100%;}
+}
+
+.boy-strip-1{
+    background-position: -800% 100%;
+}
+
+.boy-strip-2{
+    background-position: -900% 100%;
+}
+
+.boy-strip-3{
+    background-position: -1000% 100%;
+}
+
+.boy-stand{
+    background-position: -400% 100%;
+}
+
+
+.boy-unwrap{
+    animation: unwrapp 2s steps(2, end) 1 forwards;
+    -webkit-animation: unwrapp 2s steps(2, end) 1 forwards;
+}
+
+@keyframes unwrapp{
+    0% { background-position: -400% 100%;}
+    100% { background-position: -600% 100%;}
+}
+
+@-webkit-keyframes unwrapp{
+    0% { background-position: -400% 100%;}
+    100% { background-position: -600% 100%;}
+}
+
+.boy-hug{
+    animation: boyHug 1s steps(3, end) 1 forwards;
+    -webkit-animation: boyHug 1s steps(3, end) 1 forwards;
+}
+
+@keyframes boyHug{
+    0% { background-position: -1000% 100%;}
+    100% { background-position: -1300% 100%;}
+}
+
+@-webkit-keyframes boyHug{
+    0% { background-position: -1000% 100%;}
+    100% { background-position: -1300% 100%;}
+}
+
+.christmas-boy-head{
+    left: 7.85rem;
+    top: 4rem;
+    width: 3.5rem;
+    height: 4.06rem;
+    position: absolute;
+    z-index: 12;
+    display: none;
+    background: url("../images/b/boy.png");
+    background-size: 1400% 100%;
+    background-position: -1300% 100%;
+}
+
+.girl{
+    width: 3.5rem;
+    height: 4.06rem;
+    position: absolute;
+    z-index: 10;
+    left: 1rem;
+    top: 3.2rem;
+    background: url("../images/b/girl.png");
+    background-size: 2100% 100%;
+}
+
+.gril-standUp{
+    left: 1.2rem;
+    animation: standUp 200ms steps(3, start) forwards;
+    -webkit-animation: standUp 200ms steps(3, start) forwards;
+}
+
+@keyframes standUp{
+    0% { background-position: 0% 100%;}
+    100% { background-position: -300% 100%;top: 4rem;}
+}
+
+@-webkit-keyframes standUp{
+    0% { background-position: 0% 100%;}
+    100% { background-position: -300% 100%;top: 4rem;}
+}
+
+.girl-throwBook{
+    top: 4rem;
+    left: .5rem;
+    animation: throwBook 300ms steps(2, start) forwards;
+    -webkit-animation: throwBook 300ms steps(2, start) forwards;
+}
+
+@keyframes throwBook{
+    0% { background-position: -300% 100%;}
+    100% { background-position: -500% 100%;}
+}
+
+@-webkit-keyframes throwBook{
+    0% { background-position: -300% 100%;}
+    100% { background-position: -500% 100%;}
+}
+
+.girl-walk{
+    left: 1rem;
+    animation: girlWalk 900ms steps(4, start) infinite;
+    -webkit-animation: girlWalk 900ms steps(4, start) infinite;
+}
+
+@keyframes girlWalk{
+    0% { background-position: -500% 100%;}
+    100% { background-position: -900% 100%;}
+}
+
+@-webkit-keyframes girlWalk{
+    0% { background-position: -500% 100%;}
+    100% { background-position: -900% 100%;}
+}
+
+.girl-stand{
+    top: 4rem;
+    background-position: -1000% 100%;
+}
+
+.girl-choose{
+    animation: girlChoose 2000ms steps(2, end) forwards;
+    -webkit-animation: girlChoose 2000ms steps(2, end) forwards;
+}
+
+@keyframes girlChoose{
+    0% { background-position: -1000% 100%;}
+    100% { background-position: -1200% 100%;}
+}
+
+@-webkit-keyframes girlChoose{
+    0% { background-position: -1000% 100%;}
+    100% { background-position: -1200% 100%;}
+}
+
+.girl-weep {
+    animation: girlWeep 450ms steps(4, end) forwards infinite;
+    -webkit-animation: girlWeep 450ms steps(4, end) forwards infinite;
+}
+
+@keyframes girlWeep {
+    0% {
+        background-position: -1300% 100%;
+    }
+    100% {
+        background-position: -1700% 100%;
+    }
+}
+
+@-webkit-keyframes girlWeep {
+    0% {
+        background-position: -1300% 100%;
+    }
+    100% {
+        background-position: -1700% 100%;
+    }
+}
+
+.girl-hug {
+    animation: girlHug 450ms steps(3, end) forwards;
+    -webkit-animation: girlHug 450ms steps(3, end) forwards;
+}
+
+@keyframes girlHug {
+    0% {
+        background-position: -1700% 100%;
+    }
+    100% {
+        left: 7.85rem;
+        background-position: -2000% 100%;
+    }
+}
+
+@-webkit-keyframes girlHug {
+    0% {
+        background-position: -1700% 100%;
+    }
+    100% {
+        left: 7.85rem;
+        background-position: -2000% 100%;
+    }
+}
+
+
+
+
+
